@@ -24,7 +24,7 @@ const SearchBar = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} />
             <IconButton>
-                <SearchIcon />
+                <SearchIcon sx={{ color: '#FC1503' }} />
             </IconButton>
         </Paper>
     );
