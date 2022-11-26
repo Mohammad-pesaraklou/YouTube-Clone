@@ -4,10 +4,9 @@ import React from 'react';
 import VideoCard from './VideoCard'
 import ChannelCard from './ChannelCard'
 
-const Video = ({ videos }) => {
+const Video = ({ videos, direction }) => {
 
-    const direction = 'row'
-    console.log(videos);
+
     return (
         <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="center" alignItems="start" gap={2}>
             {videos.map((item, index) => (

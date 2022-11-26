@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
+
 // data
 import { fetchData } from "../utils/FetchFromAPI";
 // components
@@ -13,6 +14,7 @@ const ChannelDetails = () => {
     const [videos, setVideos] = useState(null);
 
     const { id } = useParams();
+
 
     useEffect(() => {
         const fetchResults = async () => {
@@ -28,6 +30,7 @@ const ChannelDetails = () => {
         fetchResults();
     }, [id]);
 
+
     return (
         <Box minHeight="95vh">
             <Box>
@@ -38,6 +41,7 @@ const ChannelDetails = () => {
                 }} />
                 <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
             </Box>
+
             <Box p={2} display="flex">
                 <Box />
                 {

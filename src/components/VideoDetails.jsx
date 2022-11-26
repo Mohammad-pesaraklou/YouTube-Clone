@@ -10,23 +10,20 @@ import Video from "./Video";
 import { fetchData } from "../utils/FetchFromAPI";
 const VideoDetails = () => {
 
-    const [videoDetail, setVideoDetail] = useState(null);
-    const [videos, setVideos] = useState(null);
+    const [videoDetail, setVideoDetail] = useState([]);
+    const [videos, setVideos] = useState([]);
 
     const { id } = useParams();
 
 
-
-    // const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
-
     useEffect(() => {
         fetchData(`videos?part=snippet,statistics&id=${id}`)
-            .then(data => setVideoDetail(data.items[0]))
+            .then((data) => setVideoDetail(data.items[0]))
 
         fetchData(`search?part=snippet&relatedToVideoId=${id}&type=video`)
-            .then(data => setVideos(data.items))
-    }, [id])
+            .then((data) => setVideos(data.items))
 
+    }, [id]);
 
 
     return (
@@ -54,10 +51,10 @@ const VideoDetails = () => {
                                 </Typography>
                             </Stack>
                         </Stack>
-                        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
-                            {videos && <Video videos={videos} direction="column" />}
-                        </Box>
                     </Box>
+                </Box>
+                <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
+                    {videos && <Video videos={videos} direction="column" />}
                 </Box>
             </Stack>
         </Box>
