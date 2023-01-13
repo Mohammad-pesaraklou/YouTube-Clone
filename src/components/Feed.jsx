@@ -23,7 +23,7 @@ const Feed = () => {
         <Stack sx={{ flexDirection: { xs: "column", md: 'row' } }}>
             <Box sx={{ height: { xs: 'auto', md: '92vh' }, borderRight: '1px solid #3d3d3d', px: { xs: 0, md: 2 } }}>
                 <Sidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-                <Typography className="copyright" variant="body2" sx={{ mt: 2.5, color: "#fff", }}>
+                <Typography className="copyright" variant="body2" sx={{ mt: 2.5, color: "#fff", display: { xs: 'none', md: 'flex' } }}>
                     Project Created In 11/30/2022
                 </Typography>
             </Box>
